@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+    int n;//no of birds
+    scanf("%d",&n);
+    int birdIds[n];
+    for(int i=0;i<n;i++)
+        scanf("%d",&birdIds[i]);
+        //now create the frequqency table
+        int freq[6]={0};
+        for(int i=0;i<n;i++){
+            int Index=birdIds[i];
+            freq[ Index]++;
+        }
+        int maxType=1;
+        int maxfreq=freq[1];
+        for(int i=2;i<6;i++){
+            if(freq[i]>maxfreq){
+                maxType=i;
+                maxfreq=freq[i];
+            }
+        }
+        printf("%d",maxType);
+    
+    
+}

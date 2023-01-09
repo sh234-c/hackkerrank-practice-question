@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int n;
+    // printf("enter the order of the matrix:");
+    scanf("%d",&n);
+    int mat[n][n];//square matrix
+    for(int i=0;i<n;i++)//enteries for elements in rows
+    for(int j=0;j<n;j++)//enteries for columns
+    scanf("%d",&mat[i][j]);
+    int principaldiagonal=0;
+    for(int i=0;i<n;i++)
+    principaldiagonal+=mat[i][i];
+    // printf("%d",principaldiagonal);
+    int secondarydiagonal=0;
+    for(int i=0;i<n;i++)
+    secondarydiagonal+=mat[i][n-i-1];
+    // printf("%d",secondarydiagonal);
+    int diff=principaldiagonal-secondarydiagonal;
+    // printf("difference=%d\n",diff);
+    diff=abs(diff);
+    printf("%d\n",diff);
+  
+}
